@@ -909,12 +909,166 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     const SizedBox(width: 4),
                                   ],
-                                  Text(
-                                    '฿${product['price']}',
-                                    style: GoogleFonts.kanit(
-                                      fontSize: 14,
-                                      fontWeight: FontWeight.bold,
-                                      color: AppColors.primary,
+                                  Expanded(
+                                    child: Text(
+                                      '฿${product['price']}',
+                                      style: GoogleFonts.kanit(
+                                        fontSize: 14,
+                                        fontWeight: FontWeight.bold,
+                                        color: AppColors.primary,
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const SizedBox(height: 8),
+                              // Top Products Action Buttons
+                              Row(
+                                children: [
+                                  // Quick View Button
+                                  Expanded(
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        ScaffoldMessenger.of(
+                                          context,
+                                        ).showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'ดูรายละเอียด ${product['name']}',
+                                              style: GoogleFonts.kanit(
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                            backgroundColor: AppColors.primary,
+                                            duration: const Duration(
+                                              seconds: 1,
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                      child: Container(
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          border: Border.all(
+                                            color: AppColors.primary
+                                                .withOpacity(0.4),
+                                            width: 1,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            15,
+                                          ),
+                                          color: AppColors.primary.withOpacity(
+                                            0.1,
+                                          ),
+                                        ),
+                                        child: Center(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              Icon(
+                                                Icons.visibility_outlined,
+                                                size: 14,
+                                                color: AppColors.primary,
+                                              ),
+                                              const SizedBox(width: 4),
+                                              Text(
+                                                'ดู',
+                                                style: GoogleFonts.kanit(
+                                                  fontSize: 11,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: AppColors.primary,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(width: 6),
+                                  // Add to Cart Button
+                                  Expanded(
+                                    child: GestureDetector(
+                                      onTap: () {
+                                        ScaffoldMessenger.of(
+                                          context,
+                                        ).showSnackBar(
+                                          SnackBar(
+                                            content: Text(
+                                              'เพิ่ม ${product['name']} ลงตะกร้าแล้ว!',
+                                              style: GoogleFonts.kanit(
+                                                fontSize: 12,
+                                              ),
+                                            ),
+                                            backgroundColor: AppColors.success,
+                                            duration: const Duration(
+                                              seconds: 2,
+                                            ),
+                                            action: SnackBarAction(
+                                              label: 'ดูตะกร้า',
+                                              textColor: Colors.white,
+                                              onPressed: () {
+                                                Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        const CartScreen(),
+                                                  ),
+                                                );
+                                              },
+                                            ),
+                                          ),
+                                        );
+                                      },
+                                      child: Container(
+                                        height: 30,
+                                        decoration: BoxDecoration(
+                                          gradient: LinearGradient(
+                                            colors: [
+                                              AppColors.primary,
+                                              AppColors.primary.withOpacity(
+                                                0.8,
+                                              ),
+                                            ],
+                                            begin: Alignment.topLeft,
+                                            end: Alignment.bottomRight,
+                                          ),
+                                          borderRadius: BorderRadius.circular(
+                                            15,
+                                          ),
+                                          boxShadow: [
+                                            BoxShadow(
+                                              color: AppColors.primary
+                                                  .withOpacity(0.3),
+                                              blurRadius: 4,
+                                              offset: const Offset(0, 2),
+                                            ),
+                                          ],
+                                        ),
+                                        child: Center(
+                                          child: Row(
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.center,
+                                            children: [
+                                              const Icon(
+                                                Icons.add_shopping_cart,
+                                                size: 14,
+                                                color: Colors.white,
+                                              ),
+                                              const SizedBox(width: 4),
+                                              Text(
+                                                'ซื้อ',
+                                                style: GoogleFonts.kanit(
+                                                  fontSize: 11,
+                                                  fontWeight: FontWeight.bold,
+                                                  color: Colors.white,
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        ),
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -1247,7 +1401,8 @@ class _HomeScreenState extends State<HomeScreen> {
                                           Navigator.push(
                                             context,
                                             MaterialPageRoute(
-                                              builder: (context) => const CartScreen(),
+                                              builder: (context) =>
+                                                  const CartScreen(),
                                             ),
                                           );
                                         },
