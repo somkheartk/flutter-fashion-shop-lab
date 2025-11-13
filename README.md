@@ -1,362 +1,125 @@
-# 🛍️ Fashion Shop - Flutter E-commerce App
+# 🛍️ Fashion Shop - แอปขายเสื้อผ้า
 
-[![Flutter](https://img.shields.io/badge/Flutter-02569B?style=for-the-badge&logo=flutter&logoColor=white)](https://flutter.dev)
-[![Dart](https://img.shields.io/badge/Dart-0175C2?style=for-the-badge&logo=dart&logoColor=white)](https://dart.dev)
-[![Firebase](https://img.shields.io/badge/Firebase-039BE5?style=for-the-badge&logo=Firebase&logoColor=white)](https://firebase.google.com)
+แอปขายเสื้อผ้าและแฟชั่น พัฒนาด้วย Flutter สำหรับ iOS, Android และ Web
 
-แอปพลิเคชันขายเสื้อผ้าและแฟชั่นที่สมบูรณ์แบบ พัฒนาด้วย Flutter สำหรับทั้ง iOS และ Android
+---
 
-![App Preview](docs/images/app-preview.png)
+## 📱 คุณสมบัติหลัก
 
-## ✨ Features หลัก
+### 🏠 หน้าหลัก
+- 🔍 **ค้นหาสินค้า** - ค้นหาได้รวดเร็ว
+- 🏷️ **หมวดหมู่** - 6 ประเภท (ผู้ชาย, ผู้หญิง, เด็ก, รองเท้า, กระเป๋า, เครื่องประดับ)
+- 🎯 **Banner โปรโมชั่น** - ข้อเสนอพิเศษ
+- ⚡ **Flash Sale** - ลดราคาจำกัดเวลา
+- 🔥 **สินค้ายอดนิยม** - Top Performing
+- 👔 **แบรนด์ดัง** - Nike, Adidas, Zara, H&M
+- 📦 **สินค้าแต่ละหมวด** - แสดง 4 คอลัมน์
 
-### 🏠 หน้าหลัก (Home Screen)
-- **Search Bar** - ค้นหาสินค้าอย่างรวดเร็ว
-- **Categories** - หมวดหมู่สินค้า 6 ประเภท (ผู้ชาย, ผู้หญิง, เด็ก, รองเท้า, เครื่องประดับ, กระเป๋า)
-- **Banner Slider** - โปรโมชั่นและข้อเสนอพิเศษ
-- **Flash Sale** - สินค้าลดราคาจำกัดเวลา
-- **Top Performing** - สินค้ายอดนิยม
-- **Popular Brands** - แบรนด์ชั้นนำ (Nike, Adidas, Zara, H&M, ฯลฯ)
-- **Product Grid** - แสดงสินค้าแต่ละหมวดหมู่ 4 คอลัมน์
-- **Promotion Slides** - โฆษณาคั่นระหว่างหมวดหมู่
+### 🛒 ช้อปปิ้ง
+- ➕ **เพิ่มลงตะกร้า** - Add to Cart
+- 👁️ **ดูรายละเอียด** - Quick View
+- ❤️ **รายการโปรด** - Wishlist
+- ⭐ **คะแนนรีวิว** - Rating & Reviews
+- 💰 **ราคาพิเศษ** - ราคาปกติ/ลดราคา
 
-### 🛒 Shopping Features
-- **Add to Cart** - เพิ่มสินค้าลงตะกร้า
-- **Quick View** - ดูรายละเอียดสินค้าอย่างรวดเร็ว
-- **Wishlist** - รายการสินค้าที่ชื่นชอบ
-- **Product Rating** - คะแนนและรีวิวสินค้า
-- **Price Display** - ราคาปกติและราคาพิเศษ
+### 🎨 การออกแบบ
+- 🎯 **Material Design 3** - UI ทันสมัย
+- 🇹🇭 **ฟอนต์ Kanit** - รองรับภาษาไทย
+- 📱 **Responsive** - รองรับทุกหน้าจอ
+- ✨ **Animation** - เคลื่อนไหวลื่นไหล
 
-### 🎨 UI/UX Design
-- **Modern Material Design** - ออกแบบตามหลัก Material Design 3
-- **Thai Typography** - ใช้ฟอนต์ Kanit สำหรับข้อความภาษาไทย
-- **Responsive Layout** - รองรับหน้าจอทุกขนาด
-- **Smooth Animations** - Animation และ Transition ที่ลื่นไหล
-- **Color Theming** - ระบบสีที่สอดคล้องกัน
+---
 
-## 📱 Screenshots
+## 🚀 เริ่มต้นใช้งาน
 
-<div style="display: flex; gap: 20px; flex-wrap: wrap;">
-  <img src="docs/screenshots/home-screen.png" width="200" alt="Home Screen"/>
-  <img src="docs/screenshots/categories.png" width="200" alt="Categories"/>
-  <img src="docs/screenshots/products.png" width="200" alt="Products"/>
-  <img src="docs/screenshots/cart.png" width="200" alt="Shopping Cart"/>
-</div>
+### ความต้องการ
+- Flutter 3.19+
+- Dart 3.3+
+- Android Studio หรือ VS Code
 
-## 🛠️ Tech Stack
-
-### Frontend
-- **Flutter 3.19+** - Cross-platform framework
-- **Dart 3.3+** - Programming language
-- **Material Design 3** - UI components
-
-### Dependencies
-```yaml
-dependencies:
-  flutter:
-    sdk: flutter
-  google_fonts: ^6.1.0        # Typography
-  cupertino_icons: ^1.0.2     # iOS icons
-  
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  flutter_lints: ^3.0.0       # Code analysis
-```
-
-### Architecture
-- **Widget-based Architecture** - Modular และ reusable components
-- **State Management** - StatefulWidget with setState
-- **Navigation** - Named routes และ MaterialPageRoute
-- **Asset Management** - Unsplash images และ local assets
-
-## 🚀 Getting Started
-
-### Prerequisites
-- Flutter SDK 3.19.0 หรือใหม่กว่า
-- Dart SDK 3.3.0 หรือใหม่กว่า
-- Android Studio / VS Code
-- Git
-
-### Installation
-
-1. **Clone repository**
+### ติดตั้ง
 ```bash
+# 1. Clone โปรเจค
 git clone https://github.com/somkheartk/flutter-fashion-shop-lab.git
 cd flutter-fashion-shop-lab
-```
 
-2. **Install dependencies**
-```bash
+# 2. ติดตั้ง dependencies
 flutter pub get
-```
 
-3. **Run the app**
-```bash
-# Development mode
+# 3. รันแอป
 flutter run
 
-# Web development
+# หรือรันบน Chrome
 flutter run -d chrome
-
-# Release mode
-flutter run --release
 ```
 
-### Project Structure
+---
+
+## 📁 โครงสร้างโปรเจค
+
 ```
 lib/
-├── main.dart                 # App entry point
+├── main.dart                 # จุดเริ่มต้นแอป
 ├── constants/
-│   └── colors.dart          # Color definitions
+│   └── colors.dart          # สี theme
 ├── screens/
 │   ├── home/
-│   │   ├── home_screen.dart      # Main home screen
-│   │   ├── search_screen.dart    # Search functionality
-│   │   └── simple_notification_screen.dart
+│   │   └── home_screen.dart      # หน้าหลัก
 │   ├── cart/
-│   │   └── cart_screen.dart      # Shopping cart
-│   ├── category/
-│   │   └── category_screen.dart  # Categories page
-│   ├── profile/
-│   │   └── profile_screen.dart   # User profile
-│   └── main_screen.dart          # Bottom navigation
-├── widgets/
-│   └── banner_card.dart          # Reusable banner component
-└── models/
-    └── product.dart              # Product data model
+│   │   └── cart_screen.dart      # ตะกร้าสินค้า
+│   └── category/
+│       └── category_screen.dart  # หมวดหมู่
+└── widgets/
+    └── banner_card.dart          # Banner component
 ```
 
-## 📊 Software Specification
+---
 
-### System Requirements
+## 🛠️ เทคโนโลยี
 
-#### Minimum Requirements
-- **iOS**: iOS 11.0+
-- **Android**: Android API level 21 (Android 5.0)+
-- **Web**: Modern browsers (Chrome, Firefox, Safari, Edge)
-- **RAM**: 2GB
-- **Storage**: 100MB
+- **Flutter 3.19+** - Framework หลัก
+- **Dart 3.3+** - ภาษาโปรแกรม
+- **Google Fonts** - ฟอนต์ Kanit
+- **Material Design 3** - UI Components
+- **Unsplash** - รูปภาพสินค้า
 
-#### Recommended Requirements
-- **iOS**: iOS 15.0+
-- **Android**: Android API level 30 (Android 11)+
-- **RAM**: 4GB+
-- **Storage**: 500MB
+---
 
-### Performance Specifications
+## 🎯 สิ่งที่กำลังพัฒนา
 
-| Metric | Target | Actual |
-|--------|--------|--------|
-| App Launch Time | < 3s | ~2.1s |
-| Screen Transition | < 300ms | ~250ms |
-| Image Loading | < 1s | ~800ms |
-| Search Response | < 500ms | ~300ms |
-| Memory Usage | < 150MB | ~120MB |
+- [ ] ระบบสมาชิก (Login/Register)
+- [ ] เชื่อมต่อ API จริง
+- [ ] ระบบชำระเงิน
+- [ ] การแจ้งเตือน Push Notification
 
-### Feature Specifications
+---
 
-#### 🏠 Home Screen Features
-- [x] **Header Section**
-  - User greeting with personalization
-  - Notification icon with badge counter
-  - Responsive layout
+## 📚 เอกสารเพิ่มเติม
 
-- [x] **Search Functionality**
-  - Real-time search suggestions
-  - Filter options
-  - Search history
+- [API Documentation](docs/api.md) - คู่มือ API
+- [Component Guide](docs/components.md) - คู่มือ Components
+- [Software Specification](docs/software-specification.md) - ข้อกำหนดซอฟต์แวร์
 
-- [x] **Categories Display**
-  - 6 main categories with images
-  - Horizontal scrollable layout
-  - Tap to navigate functionality
+---
 
-- [x] **Banner System**
-  - Auto-rotating banners (4 slides)
-  - Manual navigation dots
-  - Gradient overlays and animations
+## 👨‍💻 ผู้พัฒนา
 
-- [x] **Product Sections**
-  - Flash Sale with countdown timer
-  - Top Performing products
-  - Brand showcase
-  - Category-based product grids
+**Somkheart K.**  
+📧 Email: somkheart@gmail.com  
+🐙 GitHub: [@somkheartk](https://github.com/somkheartk)
 
-#### 🛒 E-commerce Features
-- [x] **Product Cards**
-  - Product image with loading states
-  - Price display (original/discounted)
-  - Rating and review counts
-  - Wishlist toggle
-  - Quick action buttons
-
-- [x] **Shopping Cart**
-  - Add to cart functionality
-  - Floating action button with badge
-  - Quantity management
-  - Price calculations
-
-- [x] **User Interactions**
-  - Snackbar notifications
-  - Loading indicators
-  - Error handling
-  - Haptic feedback
-
-### Technical Specifications
-
-#### Code Quality
-- **Linting**: Flutter recommended lints
-- **Code Coverage**: Target 80%+
-- **Documentation**: Comprehensive inline docs
-- **Testing**: Unit and widget tests
-
-#### Performance
-- **Build Size**: 
-  - Android APK: ~25MB
-  - iOS IPA: ~30MB
-  - Web: ~5MB gzipped
-
-- **Network Usage**:
-  - Image caching for repeated views
-  - Lazy loading for product lists
-  - Efficient API calls
-
-#### Security
-- **Data Protection**: No sensitive data storage
-- **Network Security**: HTTPS only
-- **Input Validation**: All user inputs validated
-
-## 🎨 Design System
-
-### Color Palette
-```dart
-class AppColors {
-  // Primary Colors
-  static const Color primary = Color(0xFF2196F3);     // Blue
-  static const Color secondary = Color(0xFF03DAC6);   // Teal
-  
-  // Status Colors
-  static const Color success = Color(0xFF4CAF50);     // Green
-  static const Color error = Color(0xFFF44336);       // Red
-  static const Color warning = Color(0xFFFF9800);     // Orange
-  
-  // Neutral Colors
-  static const Color background = Color(0xFFF5F5F5);  // Light Gray
-  static const Color surface = Color(0xFFFFFFFF);     // White
-  static const Color textPrimary = Color(0xFF212121); // Dark Gray
-  static const Color textSecondary = Color(0xFF757575); // Medium Gray
-  static const Color textLight = Color(0xFFBDBDBD);   // Light Gray
-}
-```
-
-### Typography
-- **Primary Font**: Kanit (Google Fonts)
-- **Fallback**: System default
-- **Sizes**: 10px - 32px
-- **Weights**: 400, 500, 600, 700
-
-### Components
-- **Cards**: Rounded corners (12px), subtle shadows
-- **Buttons**: Material Design 3 style
-- **Icons**: Material Icons with custom additions
-- **Images**: Rounded corners, loading states
-
-## 🔧 Development
-
-### Code Style
-- Follow [Effective Dart](https://dart.dev/guides/language/effective-dart) guidelines
-- Use meaningful variable and function names
-- Add documentation for public APIs
-- Implement proper error handling
-
-### Git Workflow
-```bash
-# Feature development
-git checkout -b feature/new-feature
-git commit -m "feat: add new feature"
-git push origin feature/new-feature
-
-# Bug fixes
-git checkout -b fix/bug-description
-git commit -m "fix: resolve bug issue"
-git push origin fix/bug-description
-```
-
-### Testing
-```bash
-# Run all tests
-flutter test
-
-# Test coverage
-flutter test --coverage
-```
-
-## 📈 Roadmap
-
-### Phase 1 - MVP ✅
-- [x] Basic UI implementation
-- [x] Product display
-- [x] Navigation system
-- [x] Shopping cart functionality
-
-### Phase 2 - Enhancement 🚧
-- [ ] User authentication
-- [ ] Real API integration
-- [ ] Product search and filtering
-- [ ] Order management
-
-### Phase 3 - Advanced Features 📋
-- [ ] Push notifications
-- [ ] Offline support
-- [ ] Payment integration
-- [ ] Analytics dashboard
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit changes (`git commit -m 'Add AmazingFeature'`)
-4. Push to branch (`git push origin feature/AmazingFeature`)
-5. Open Pull Request
-
-### Contribution Guidelines
-- Follow existing code style
-- Add tests for new features
-- Update documentation
-- Ensure all tests pass
+---
 
 ## 📄 License
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👥 Team
-
-- **Developer**: Somkheart K.
-- **UI/UX Designer**: Fashion Shop Team
-- **QA Engineer**: Community Contributors
-
-## 📞 Support
-
-- **Issues**: [GitHub Issues](https://github.com/somkheartk/flutter-fashion-shop-lab/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/somkheartk/flutter-fashion-shop-lab/discussions)
-- **Email**: support@fashionshop.com
-
-## 📚 Documentation
-
-- [API Documentation](docs/api.md)
-- [Component Guide](docs/components.md)
-- [Deployment Guide](docs/deployment.md)
-- [Troubleshooting](docs/troubleshooting.md)
+MIT License - ใช้งานได้อย่างอิสระ
 
 ---
 
 <div align="center">
 
-**Fashion Shop** - Built with ❤️ using Flutter
+**Fashion Shop** - สร้างด้วย ❤️ และ Flutter
 
-[Website](https://fashionshop.com) • [Download](https://github.com/somkheartk/flutter-fashion-shop-lab/releases) • [Documentation](docs/) • [Contributing](CONTRIBUTING.md)
+[📥 Download](https://github.com/somkheartk/flutter-fashion-shop-lab/releases) • [📖 Docs](docs/) • [🐛 Issues](https://github.com/somkheartk/flutter-fashion-shop-lab/issues)
 
 </div>
- 
- 
