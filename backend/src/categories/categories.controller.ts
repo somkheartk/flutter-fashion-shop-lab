@@ -19,7 +19,7 @@ export class CategoriesController {
   @Get(':id')
   @ApiOperation({ summary: 'Get category by ID' })
   @ApiResponse({ status: 200, description: 'Return category' })
-  async findOne(@Param('id', ParseIntPipe) id: number) {
+  async findOne(@Param('id') id: string) {
     const category = await this.categoriesService.findOne(id);
     return ApiResponseDto.success({ category });
   }
@@ -28,7 +28,7 @@ export class CategoriesController {
   @ApiOperation({ summary: 'Get products in category' })
   @ApiResponse({ status: 200, description: 'Return products' })
   async getCategoryProducts(
-    @Param('id', ParseIntPipe) id: number,
+    @Param('id') id: string,
     @Query('page', new ParseIntPipe({ optional: true })) page: number = 1,
     @Query('limit', new ParseIntPipe({ optional: true })) limit: number = 20,
   ) {

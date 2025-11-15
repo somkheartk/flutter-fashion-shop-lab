@@ -1,26 +1,26 @@
 import { Injectable } from '@nestjs/common';
-import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { InjectModel } from '@nestjs/mongoose';
+import { Model } from 'mongoose';
 import { Category } from './entities/category.entity';
 import { ProductsService } from '../products/products.service';
 
 @Injectable()
 export class CategoriesService {
   constructor(
-    @InjectRepository(Category)
-    private categoriesRepository: Repository<Category>,
+    @InjectModel(Category.name)
+    private categoryModel: Model<Category>,
     private productsService: ProductsService,
   ) {}
 
   async findAll(): Promise<Category[]> {
-    return this.categoriesRepository.find();
+    return this.categoryModel.find().exec();
   }
 
-  async findOne(id: number): Promise<Category> {
-    return this.categoriesRepository.findOne({ where: { id } });
+  async findOne(id: string): Promise<Category> {
+    return this.categoryModel.findById(id).exec();
   }
 
-  async getCategoryProducts(id: number, page: number = 1, limit: number = 20) {
+  async getCategoryProducts(id: string, page: number = 1, limit: number = 20) {
     const category = await this.findOne(id);
     return this.productsService.findAll({
       page,

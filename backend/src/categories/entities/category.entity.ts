@@ -1,16 +1,16 @@
-import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
-@Entity('categories')
-export class Category {
-  @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column()
+@Schema()
+export class Category extends Document {
+  @Prop({ required: true })
   name: string;
 
-  @Column()
+  @Prop({ required: true })
   icon: string;
 
-  @Column()
+  @Prop({ required: true })
   color: string;
 }
+
+export const CategorySchema = SchemaFactory.createForClass(Category);

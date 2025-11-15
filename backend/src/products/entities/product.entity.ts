@@ -1,46 +1,40 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn, UpdateDateColumn } from 'typeorm';
+import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
+import { Document } from 'mongoose';
 
-@Entity('products')
-export class Product {
-  @PrimaryGeneratedColumn()
-  id: number;
-
-  @Column()
+@Schema({ timestamps: true })
+export class Product extends Document {
+  @Prop({ required: true })
   name: string;
 
-  @Column('text')
+  @Prop({ required: true })
   description: string;
 
-  @Column('decimal', { precision: 10, scale: 2 })
+  @Prop({ required: true, type: Number })
   price: number;
 
-  @Column('decimal', { precision: 10, scale: 2, nullable: true })
+  @Prop({ type: Number, default: null })
   originalPrice: number;
 
-  @Column()
+  @Prop({ required: true })
   category: string;
 
-  @Column()
+  @Prop({ required: true })
   imageUrl: string;
 
-  @Column('decimal', { precision: 3, scale: 2, default: 0 })
+  @Prop({ type: Number, default: 0 })
   rating: number;
 
-  @Column({ default: 0 })
+  @Prop({ type: Number, default: 0 })
   reviewCount: number;
 
-  @Column('simple-json', { nullable: true })
+  @Prop({ type: [String], default: [] })
   colors: string[];
 
-  @Column('simple-json', { nullable: true })
+  @Prop({ type: [String], default: [] })
   sizes: string[];
 
-  @Column({ default: false })
+  @Prop({ type: Boolean, default: false })
   isOnSale: boolean;
-
-  @CreateDateColumn()
-  createdAt: Date;
-
-  @UpdateDateColumn()
-  updatedAt: Date;
 }
+
+export const ProductSchema = SchemaFactory.createForClass(Product);
