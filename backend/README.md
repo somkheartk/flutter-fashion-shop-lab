@@ -1,6 +1,6 @@
 # Fashion Shop API - NestJS Backend
 
-Backend API สำหรับ Flutter Fashion Shop application ที่สร้างด้วย NestJS, TypeORM และ SQLite
+Backend API สำหรับ Flutter Fashion Shop application ที่สร้างด้วย NestJS และ MongoDB
 
 ## 🚀 Features
 
@@ -11,7 +11,7 @@ Backend API สำหรับ Flutter Fashion Shop application ที่สร�
 - **User Management** - จัดการโปรไฟล์ผู้ใช้
 - **Order Management** - สร้างและติดตามคำสั่งซื้อ
 - **Authentication** - JWT authentication
-- **Database** - SQLite with TypeORM
+- **Database** - MongoDB with Mongoose
 - **Validation** - Request validation
 - **Rate Limiting** - ป้องกันการใช้งานมากเกินไป
 - **CORS** - รองรับ Flutter app
@@ -20,6 +20,7 @@ Backend API สำหรับ Flutter Fashion Shop application ที่สร�
 
 - Node.js 18+
 - npm or yarn
+- MongoDB 5.0+
 
 ## 🛠️ Installation
 
@@ -40,7 +41,7 @@ cp .env.example .env
 NODE_ENV=development
 PORT=3000
 API_PREFIX=v1
-DATABASE_PATH=./database.sqlite
+MONGODB_URI=mongodb://localhost:27017/fashion_shop
 JWT_SECRET=your-secret-key-change-in-production
 JWT_EXPIRES_IN=3600
 THROTTLE_TTL=60
@@ -106,12 +107,12 @@ API จะทำงานที่:
 
 ## 🗄️ Database
 
-ใช้ SQLite database ซึ่งจะถูกสร้างอัตโนมัติเมื่อรันครั้งแรก พร้อม seed ข้อมูลเริ่มต้น
+ใช้ MongoDB database ซึ่งจะถูกสร้างอัตโนมัติเมื่อรันครั้งแรก พร้อม seed ข้อมูลเริ่มต้น
 
-**Database Schema:**
+**Database Collections:**
 
-- **Products**: id, name, description, price, originalPrice, category, imageUrl, rating, reviewCount, colors, sizes, isOnSale
-- **Categories**: id, name, icon, color
+- **Products**: _id, name, description, price, originalPrice, category, imageUrl, rating, reviewCount, colors, sizes, isOnSale, createdAt, updatedAt
+- **Categories**: _id, name, icon, color
 
 ## 🏗️ Project Structure
 

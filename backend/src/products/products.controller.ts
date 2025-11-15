@@ -44,7 +44,7 @@ export class ProductsController {
   @ApiOperation({ summary: 'Get product by ID' })
   @ApiResponse({ status: 200, description: 'Return product details' })
   @ApiResponse({ status: 404, description: 'Product not found' })
-  async findOne(@Param('id', ParseIntPipe) id: number) {
+  async findOne(@Param('id') id: string) {
     const product = await this.productsService.findOne(id);
     return ApiResponseDto.success({ product });
   }

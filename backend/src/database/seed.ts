@@ -1,12 +1,12 @@
-import { DataSource } from 'typeorm';
+import { Model, Connection } from 'mongoose';
 import { Product } from '../products/entities/product.entity';
 import { Category } from '../categories/entities/category.entity';
 
-export async function seedDatabase(dataSource: DataSource) {
-  const productRepository = dataSource.getRepository(Product);
-  const categoryRepository = dataSource.getRepository(Category);
+export async function seedDatabase(connection: Connection) {
+  const productModel = connection.model(Product.name);
+  const categoryModel = connection.model(Category.name);
 
-  const existingProducts = await productRepository.count();
+  const existingProducts = await productModel.countDocuments();
   if (existingProducts > 0) {
     console.log('✅ Database already seeded');
     return;
@@ -22,7 +22,7 @@ export async function seedDatabase(dataSource: DataSource) {
     { name: 'Food & Delivery', icon: '🍕', color: '96CEB4' },
   ];
 
-  await categoryRepository.save(categories);
+  await categoryModel.insertMany(categories);
   console.log('✅ Categories seeded');
 
   // Seed Products (from Flutter dummy data)
@@ -120,6 +120,6 @@ export async function seedDatabase(dataSource: DataSource) {
     },
   ];
 
-  await productRepository.save(products);
+  await productModel.insertMany(products);
   console.log(`✅ Products seeded (${products.length} products)`);
 }
